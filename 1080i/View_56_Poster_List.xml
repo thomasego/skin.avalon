@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_56_Poster_List">
+
+		<!--Poster-->
+		<control type="group">
+			<posx>720</posx>
+			<posy>375</posy>
+			<visible>Control.IsVisible(56)</visible>
+
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="150" end="100" center="960,810" tween="cubic" easing="out" time="450" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="130" center="960,810" time="300" tween="cubic" easing="in"/>
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="150" end="100" center="960,810" tween="cubic" easing="out" time="450" />
+			</animation>
+
+			<!--Animate OnPrevious-->
+			<control type="group" id="5901">					
+				<visible>Container(56).OnPrevious + Control.IsVisible(56) + IntegerGreaterThan(Container.NumItems,1)</visible>
+				<animation effect="slide" time="300" reversible="false">Hidden</animation>	
+
+				<!-- Panel 7 to 6 -->
+				<control type="group">
+					<visible>Container(56).OnPrevious</visible>	
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+						<effect type="zoom" start="980,140,200,300" end="1100,170,150,225" time="300" tween="sine" easing="out" />
+					</animation>
+					<posx>980</posx>
+					<posy>140</posy>   
+					<width>200</width>
+					<height>300</height>
+					<control type="image">					
+						<width>200</width>
+						<height>300</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem5Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>300</posy>
+						<width>200</width>
+						<height>300</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem5Var]</texture>					
+					</control>
+				</control>	
+
+				<!-- Panel 5 to 6 -->
+				<control type="group">
+					<visible>Container(56).OnPrevious</visible>					
+					<animation type="Hidden" reversible="false">
+						<effect type="zoom" start="780,110,250,375" end="980,140,200,300" time="300" tween="sine" easing="out" />
+					</animation>
+					<posx>780</posx>
+					<posy>110</posy>
+					<width>250</width>
+					<height>375</height>					
+					<control type="image">						
+						<width>250</width>
+						<height>375</height>					
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem4Var]</texture>
+					</control>
+					<control type="image">						
+						<posy>375</posy>
+						<width>250</width>
+						<height>375</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem4Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 4 to 5 -->
+				<control type="group">
+					<visible>Container(56).OnPrevious</visible>
+					<animation effect="zoom" start="550,85,300,450" end="780,110,250,375" time="300" tween="sine" easing="out" reversible="false">Hidden</animation>
+					<posx>550</posx>
+					<posy>85</posy>
+					<width>300</width>
+					<height>450</height>
+					<control type="image">					
+						<width>300</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem3Var]</texture>						
+					</control>
+					<control type="image">						
+						<posy>450</posy>
+						<width>300</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem3Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 3 to 4 -->
+				<control type="group">
+					<visible>Container(56).OnPrevious</visible>
+					<animation effect="zoom" start="300,50,350,525" end="550,85,300,450" time="300" tween="sine" easing="out" reversible="false">Hidden</animation>
+					<posx>300</posx>
+					<posy>50</posy>
+					<width>350</width>
+					<height>525</height>
+					<control type="image">						
+						<width>350</width>
+						<height>525</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem2Var]</texture>						
+					</control>
+					<control type="image">					
+						<posy>525</posy>
+						<width>350</width>
+						<height>525</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem2Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 2 to 3 -->
+				<control type="group">
+					<visible>Container(56).OnPrevious</visible>
+					<animation effect="zoom" start="0,0,400,600" end="300,50,350,525" time="300" tween="sine" easing="out" reversible="false">Hidden</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>600</height>
+					<control type="image">						
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem1Var]</texture>
+					</control>
+					<control type="image">					
+						<posy>600</posy>
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem1Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 1 to 2 -->
+				<control type="group">
+					<visible>Container(56).OnPrevious</visible>
+					<animation type="Visible" reversible="false">
+						<effect type="fade" start="0" end="0" time="0" />						
+					</animation>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
+						<effect type="slide" start="0" end="500" time="300" tween="sine" easing="out" />
+					</animation>
+					<posx>-500</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>600</height>
+					<control type="image">						
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem0Var]</texture>
+					</control>
+					<control type="image">						
+						<posy>600</posy>
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem0Var]</texture>	
+					</control>
+				</control>
+
+			</control>
+
+			<!--Animate OnNext-->
+			<control type="group" id="5902">				
+				<visible>Container(56).OnNext + Control.IsVisible(56) + IntegerGreaterThan(Container.NumItems,1)</visible>
+				<animation effect="slide" end="0,0" time="300" reversible="false">Hidden</animation>
+
+				<!-- Panel 7 to 6 -->
+				<control type="group">
+					<visible>Container(56).OnNext</visible>	
+					<animation type="Visible" reversible="false">
+						<effect type="fade" start="0" end="0" time="0" />						
+					</animation>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
+						<effect type="zoom" start="1100,170,150,225" end="980,140,200,300" time="300" tween="sine" easing="out" />
+					</animation>
+					<posx>1100</posx>
+					<posy>170</posy>
+					<width>150</width>
+					<height>225</height>
+					<control type="image">						
+						<width>150</width>
+						<height>225</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem4Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>225</posy>
+						<width>150</width>
+						<height>225</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem4Var]</texture>					
+					</control>
+
+				</control>	
+
+				<!-- Panel 6 to 5 -->
+				<control type="group">
+					<visible>Container(56).OnNext</visible>					
+					<animation type="Hidden" reversible="false">						
+						<effect type="zoom" start="980,140,200,300" end="780,110,250,375" time="300" tween="sine" easing="out" />
+					</animation>
+					<posx>980</posx>
+					<posy>140</posy>
+					<width>200</width>
+					<height>300</height>
+					<control type="image">						
+						<width>200</width>
+						<height>300</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem3Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>300</posy>
+						<width>200</width>
+						<height>300</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem3Var]</texture>					
+					</control>
+
+				</control>
+
+				<!-- Panel 5 to 4 -->
+				<control type="group">
+					<visible>Container(56).OnNext</visible>
+					<animation effect="zoom" start="780,110,250,375" end="550,85,300,450" time="300" tween="sine" easing="out" reversible="false">Hidden</animation>
+					<posx>780</posx>
+					<posy>110</posy>
+					<width>250</width>
+					<height>375</height>
+					<control type="image">					
+						<width>250</width>
+						<height>375</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem2Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>375</posy>
+						<width>250</width>
+						<height>375</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem2Var]</texture>						
+					</control>
+
+				</control>
+
+				<!-- Panel 4 to 3 -->
+				<control type="group">
+					<visible>Container(56).OnNext</visible>
+					<animation effect="zoom" start="550,85,300,450" end="300,50,350,525" tween="sine" easing="out" time="300" reversible="false">Hidden</animation>
+					<posx>550</posx>
+					<posy>85</posy>
+					<width>300</width>
+					<height>450</height>
+					<control type="image">						
+						<width>300</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem1Var]</texture>	
+					</control>
+					<control type="image">						
+						<posy>450</posy>
+						<width>300</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem1Var]</texture>
+					</control>					
+				</control>
+
+				<!-- Panel 3 to 2 -->
+				<control type="group">
+					<visible>Container(56).OnNext</visible>
+					<animation effect="zoom" start="300,50,350,525" end="0,0,400,600" tween="sine" easing="out" time="300" reversible="false">Hidden</animation>
+					<posx>300</posx>
+					<posy>50</posy>
+					<width>350</width>
+					<height>525</height>
+					<control type="image">						
+						<width>350</width>
+						<height>525</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem0Var]</texture>							
+					</control>
+					<control type="image">						
+						<posy>525</posy>
+						<width>350</width>
+						<height>525</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem0Var]</texture>					
+					</control>
+
+				</control>
+
+				<!-- Panel 2 to 1 -->
+				<control type="group">
+					<visible>Container(56).OnNext</visible>					
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+						<effect type="slide" start="0,0" end="-500" time="300" tween="sine" easing="out" />
+					</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>600</height>
+					<control type="image">						
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-1Var]</texture>						
+					</control>
+					<control type="image">						
+						<posy>600</posy>
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-1Var]</texture>						
+					</control>					
+				</control>
+
+			</control>
+
+			<!--Static Panels-->
+			<control type="group" id="5900">				
+				<visible>!Control.IsVisible(5901) + !Control.IsVisible(5902)</visible>	
+
+
+				<!-- Poster 5 -->
+				<control type="group">					
+					<posx>980</posx>
+					<posy>140</posy>
+					<width>200</width>
+					<height>300</height>					
+					<control type="image">						
+						<width>200</width>
+						<height>300</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem4Var]</texture>							
+					</control>
+					<control type="image">						
+						<posy>300</posy>
+						<width>200</width>
+						<height>300</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem4Var]</texture>				
+					</control>
+				</control>
+
+				<!-- Poster 4 -->
+				<control type="group">					
+					<posx>780</posx>
+					<posy>110</posy>
+					<width>250</width>
+					<height>375</height>					
+					<control type="image">						
+						<width>250</width>
+						<height>375</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem3Var]</texture>							
+					</control>
+					<control type="image">					
+						<posy>375</posy>
+						<width>250</width>
+						<height>375</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem3Var]</texture>				
+					</control>
+				</control>
+
+				<!-- Poster 3 -->
+				<control type="group">					
+					<posx>550</posx>
+					<posy>85</posy>
+					<width>300</width>
+					<height>450</height>			
+					<control type="image">						
+						<width>300</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem2Var]</texture>				
+					</control>
+					<control type="image">					
+						<posy>450</posy>
+						<width>300</width>
+						<height>450</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem2Var]</texture>				
+					</control>
+				</control>
+
+				<!-- Poster 2 -->
+				<control type="group">					
+					<posx>300</posx>
+					<posy>50</posy>
+					<width>350</width>
+					<height>525</height>					
+					<control type="image">						
+						<width>350</width>
+						<height>525</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem1Var]</texture>								
+					</control>
+					<control type="image">
+						<posy>525</posy>
+						<width>350</width>
+						<height>525</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem1Var]</texture>				
+					</control>					
+				</control>
+
+				<!-- Poster 1 -->
+				<control type="group">						
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>600</height>					
+					<control type="image">						
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem0Var]</texture>			
+					</control>
+					<control type="image">					
+						<posy>600</posy>
+						<width>400</width>
+						<height>600</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem0Var]</texture>	
+					</control>
+
+				</control>
+
+			</control>
+
+		</control>
+
+		<!--Panels-->
+		<control type="group">
+			<posx>0</posx>
+			<posy>250</posy>
+			<visible>Control.IsVisible(56)</visible>			
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="150" end="100" center="960,810" tween="cubic" easing="out" time="450" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="130" center="960,810" time="300" tween="cubic" easing="in"/>
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="150" end="100" center="960,810" tween="cubic" easing="out" time="450" />
+			</animation>
+	
+			<control type="image">	<!--Panel List-->				
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>1920</width>
+				<height>650</height>
+				<texture flipx="true">views/view_56_panel.png</texture>					
+			</control>			
+
+		</control>
+
+		<!--List 56-->			
+		<control type="list" id="56">						
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="150" end="100" center="960,810" tween="cubic" easing="out" time="450" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="130" center="960,810" time="300" tween="cubic" easing="in"/>
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="150" end="100" center="960,810" tween="cubic" easing="out" time="450" />
+			</animation>
+			<viewtype label="Poster List">list</viewtype> 
+			<posx>55</posx>
+			<posy>410</posy>
+			<width>700</width>
+			<height>540</height>
+			<onleft>9000</onleft>
+			<onright>60</onright>				
+			<onup>56</onup>
+			<ondown>56</ondown>
+			<pagecontrol>60</pagecontrol>
+			<focusposition>0</focusposition>			
+			<scrolltime>200</scrolltime>
+
+			<itemlayout width="700" height="60"> 						
+				<control type="label">	<!--Label-->				
+					<posx>50</posx>
+					<width>520</width>
+					<font>Light35</font>
+					<textcolor>midgrey</textcolor>
+					<selectedcolor>orange</selectedcolor>		
+					<label>$VAR[value_list_label_1]</label>
+				</control>				
+				<control type="image">	<!--Watched Overlay Movies, Episode-->	
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+					<posx>600</posx>
+					<posy>23</posy>
+					<width>44</width>
+					<height>20</height>					
+					<colordiffuse>55ffffff</colordiffuse>
+					<texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>	
+				</control>
+				<control type="label">	<!--Count of Unwatched Episodes-->
+					<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+					<posx>630</posx>
+					<width>50</width>					
+					<font>Light32</font>
+					<align>center</align>
+					<textcolor>midgrey</textcolor>					
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				</control>	
+				<control type="image">	<!--Activated Icon-->
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+					<visible>SubString(ListItem.Label2,$LOCALIZE[305])</visible>										
+					<posx>600</posx>
+					<posy>10</posy>
+					<width>40</width>
+					<height>40</height>						
+					<aspectratio>scale</aspectratio>
+					<colordiffuse>88ffffff</colordiffuse>
+					<texture>common/check.png</texture>                    
+				</control> 	
+				<control type="image">	<!--Download Icon-->
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+					<visible>SubString(ListItem.Label2,%,right)</visible>						
+					<animation effect="fade" start="100" end="40" tween="sine" easing="inout" time="1200" pulse="true" reversible="false" condition="true">Conditional</animation>
+					<posx>600</posx>
+					<posy>10</posy>
+					<width>40</width>
+					<height>40</height>						
+					<aspectratio>scale</aspectratio>						
+					<texture>common/download.png</texture>                    
+				</control> 	
+			</itemlayout>
+			<focusedlayout width="700" height="60">				
+				<control type="image">	<!--Slider-->
+					<animation type="Focus" condition="Container(56).OnNext" reversible="false">
+						<effect type="slide" start="0,-50" end="0,0" time="150" tween="Quadratic" easing="out"/>
+					</animation>
+					<animation type="Focus" condition="Container(56).OnPrevious" reversible="false">
+						<effect type="slide" start="0,50" end="0,0" time="150" tween="Quadratic" easing="out"/>
+					</animation>
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>695</width>
+					<height>50</height>
+					<texture>common/slider.png</texture>
+					<colordiffuse>DDffffff</colordiffuse>					
+				</control>			
+				<control type="label">	<!--Label-->						
+					<posx>50</posx> 
+					<width>520</width>						
+					<font>Light35</font>
+					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
+					<textcolor>mainblue</textcolor>	
+					<selectedcolor>orange</selectedcolor>
+					<label>$VAR[value_list_label_1]</label>
+				</control>	
+				<control type="image">	<!--Watched Overlay Movies, Episode-->	
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>					
+					<posx>600</posx>
+					<posy>23</posy>
+					<width>44</width>
+					<height>20</height>
+					<colordiffuse>88ffffff</colordiffuse>
+					<texture>$INFO[ListItem.Overlay,overlays/,/view_50_watched.png]</texture>		
+				</control>
+				<control type="label">	<!--Count of Unwatched Episodes-->
+					<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+					<posx>630</posx>
+					<width>50</width>					
+					<font>Light32</font>
+					<align>center</align>					
+					<textcolor>midgrey</textcolor>					
+					<selectedcolor>midgrey</selectedcolor>				
+					<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				</control>	
+				<control type="image">	<!--Activated Icon-->
+					<visible>!IsEmpty(ListItem.Label2)</visible>
+					<visible>SubString(ListItem.Label2,$LOCALIZE[305])</visible>										
+					<posx>600</posx>
+					<posy>10</posy>
+					<width>40</width>
+					<height>40</height>						
+					<aspectratio>scale</aspectratio>
+					<colordiffuse>eeffffff</colordiffuse>
+					<texture>common/check.png</texture>                    
+				</control> 	
+				<control type="image">	<!--Download Icon-->
+					<visible>!IsEmpty(ListItem.Label2)</visible>	
+					<visible>SubString(ListItem.Label2,%,right)</visible>						
+					<animation effect="fade" start="100" end="40" tween="sine" easing="inout" time="1200" pulse="true" reversible="false" condition="true">Conditional</animation>
+					<posx>600</posx>
+					<posy>10</posy>
+					<width>40</width>
+					<height>40</height>						
+					<aspectratio>scale</aspectratio>						
+					<texture>common/download.png</texture>                    
+				</control> 
+			</focusedlayout>				
+
+		</control>
+
+		<!--List Label-->
+		<control type="group">				
+			<visible>Control.IsVisible(56)</visible>
+			<visible>!SubString(ListItem.Label,..)</visible>
+			<include>animation_fade</include>					
+			<posy>1005</posy>		
+			<control type="grouplist">	
+				<animation effect="slide" start="0,0" end="0,-5" time="0" condition="Skin.HasSetting(Scrollbar) + IntegerGreaterThan(Container(51).NumItems,30)">Conditional</animation>
+				<posx>460</posx>
+				<posy>0</posy>
+				<width>1000</width>
+				<height>60</height>				
+				<itemgap>0</itemgap>
+				<align>center</align>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>horizontal</orientation>
+
+				<control type="label">	<!--Ground 10-->				
+					<posx>0</posx>
+					<posy>0</posy> 		
+					<width>auto</width>
+					<align>center</align>					
+					<font>Light32</font>			
+					<textcolor>mainblue</textcolor>
+					<label>$VAR[value_ground10_value]</label>
+				</control>	
+				<control type="label">	
+					<visible>![IsEmpty(Control.GetLabel(5310)) | IsEmpty(Control.GetLabel(5311))]</visible>	
+					<posx>0</posx>
+					<posy>0</posy> 		
+					<width>auto</width>
+					<align>center</align>					
+					<font>Light32</font>			
+					<textcolor>mainblue</textcolor>
+					<label> - </label>
+				</control>	
+				<control type="label">	<!--Ground 11-->				
+					<posx>0</posx>
+					<posy>0</posy> 		
+					<width>auto</width>
+					<align>center</align>					
+					<font>Light32</font>			
+					<textcolor>mainblue</textcolor>
+					<label>$VAR[value_ground11_value]</label>
+				</control>	
+				<control type="label">	
+					<visible>!IsEmpty(Control.GetLabel(5312))</visible>	
+					<posx>0</posx>
+					<posy>0</posy> 		
+					<width>auto</width>
+					<align>center</align>					
+					<font>Light32</font>			
+					<textcolor>mainblue</textcolor>
+					<label> - </label>
+				</control>
+				<control type="label">	<!--Ground 12-->			
+					<posx>0</posx>
+					<posy>0</posy> 		
+					<width>auto</width>
+					<align>center</align>					
+					<font>Light32</font>			
+					<textcolor>mainblue</textcolor>
+					<label>$VAR[value_ground12_value]</label>
+				</control>			
+			</control>	
+		</control>
+		
+	</include>
+</includes>

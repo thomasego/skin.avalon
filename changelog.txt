@@ -1,0 +1,44 @@
+v2.4.0
+- Ready for Isengard
+
+v2.4.1
+- Small fixes
+
+v2.4.2
+- Update live tv and music osd
+
+v2.4.3
+- Ready for repo
+
+v2.4.4
+- Small fixes
+
+v2.4.5
+- Rework osd settings
+- Trailer play directly in trailer tab and can be control with a osd
+- Fixed square icons in  add-on section
+- Add missing disable button for radio in skin settings
+- Add missing back icons
+- Open views for video add-on section
+
+v2.4.6
+- Rework pvr views and fix bugs
+- All views on startup open and have not to be enabel seperately
+
+v2.4.7
+- Change font mainmenu to Open Sans for more language support
+
+v2.4.8
+- Change font mainmenu to Sourced Sans Pro for more language support
+- Add codecinfo during video playback
+- Add font for digital clock screensaver
+- Hidde flags when back is focus
+- Add option to set big info in all views
+- Add missing "m" button to keybord
+- Rework progress dialog display percent and progressess bar
+- Change home fanarts
+
+v2.4.9
+- Poster wrap view new animation slide
+- Add file and path info in video info
+- Add horizontal menu

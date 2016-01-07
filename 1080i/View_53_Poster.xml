@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="View_53_Poster">	
+
+		<!--Panels-->
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>				
+			<include>animation_fade</include>					
+
+			<control type="image">	<!--Panel Info (RSS)-->			
+				<posx>0</posx>
+				<posy>609</posy>
+				<width>1920</width>
+				<height>180</height>
+				<texture>views/view_52_53_info.png</texture>					
+			</control>		
+			<control type="image">	<!--Panel List-->				
+				<posx>0</posx>
+				<posy>100</posy>
+				<width>1920</width>
+				<height>650</height>
+				<texture>views/view_52_53_panel.png</texture>					
+			</control>			
+
+		</control>
+
+		<!--Poster-->
+		<control type="group">
+			<posx>80</posx>
+			<posy>170</posy>
+			<visible>Control.IsVisible(53)</visible>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="160" end="100" center="960,300" tween="cubic" easing="out" time="450"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="130" center="960,300" time="375" tween="cubic" easing="in"/>
+				<effect type="fade" start="100" end="0" time="375"/>
+			</animation>
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="800"/>
+				<effect type="zoom" start="160" end="100" center="960,300" tween="cubic" easing="out" time="450"/>
+			</animation>
+
+			<!--Animate OnPrevious-->
+			<control type="group" id="5901">					
+				<visible>Container(53).OnPrevious + Control.IsVisible(53) + IntegerGreaterThan(Container.NumItems,1)</visible>
+				<animation effect="slide" time="375" reversible="false">Hidden</animation>	
+
+				<!-- Panel 7 to 6 -->
+				<control type="group">
+					<visible>Container(53).OnPrevious</visible>	
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="100" end="0" time="375" tween="sine" easing="out" />
+						<effect type="slide" start="0" end="370" time="375" tween="sine" easing="out" />
+					</animation>
+					<posx>1480</posx>
+					<posy>30</posy>   
+					<width>266</width>
+					<height>400</height>
+					<control type="image">					
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem3Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem3Var]</texture>					
+					</control>
+				</control>	
+
+				<!-- Panel 5 to 6 -->
+				<control type="group">
+					<visible>Container(53).OnPrevious</visible>					
+					<animation effect="slide" start="0" end="370" tween="sine" easing="out" time="375" reversible="false">Hidden</animation>
+					<posx>1110</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>					
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>					
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem2Var]</texture>
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem2Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 4 to 5 -->
+				<control type="group">
+					<visible>Container(53).OnPrevious</visible>
+					<animation effect="zoom" start="710,0,320,480" end="1110,30,266,400" time="375" tween="sine" easing="out" reversible="false">Hidden</animation>
+					<posx>710</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>480</height>
+					<control type="image">					
+						<width>320</width>
+						<height>480</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem1Var]</texture>						
+					</control>
+					<control type="image">						
+						<posy>480</posy>
+						<width>320</width>
+						<height>480</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem1Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 3 to 4 -->
+				<control type="group">
+					<visible>Container(53).OnPrevious</visible>
+					<animation effect="zoom" start="370,30,266,400" end="710,0,320,480" time="375" tween="sine" easing="out" reversible="false">Hidden</animation>
+					<posx>370</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem0Var]</texture>						
+					</control>
+					<control type="image">					
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem0Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 2 to 3 -->
+				<control type="group">
+					<visible>Container(53).OnPrevious</visible>
+					<animation effect="slide" start="0" end="370" tween="sine" easing="out" time="375" reversible="false">Hidden</animation>
+					<posx>0</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-1Var]</texture>
+					</control>
+					<control type="image">					
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-1Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Panel 1 to 2 -->
+				<control type="group">
+					<visible>Container(53).OnPrevious</visible>
+					<animation type="Visible" reversible="false">
+						<effect type="fade" start="0" end="0" time="0" />						
+					</animation>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="0" end="100" time="375" tween="sine" easing="in" />
+						<effect type="slide" start="0" end="370" time="375" tween="sine" easing="out" />
+					</animation>
+					<posx>-370</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-2Var]</texture>
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-2Var]</texture>	
+					</control>
+				</control>
+
+			</control>
+
+			<!--Animate OnNext-->
+			<control type="group" id="5902">				
+				<visible>Container(53).OnNext + Control.IsVisible(53) + IntegerGreaterThan(Container.NumItems,1)</visible>
+				<animation effect="slide" end="0,0" time="375" reversible="false">Hidden</animation>
+
+				<!-- Panel 7 to 6 -->
+				<control type="group">
+					<visible>Container(53).OnNext</visible>	
+					<animation type="Visible" reversible="false">
+						<effect type="fade" start="0" end="0" time="0" />						
+					</animation>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="0" end="100" time="375" tween="sine" easing="in" />
+						<effect type="slide" start="0" end="-370" time="375" tween="sine" easing="out" />
+					</animation>
+					<posx>1850</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem2Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem2Var]</texture>					
+					</control>
+
+				</control>	
+
+				<!-- Panel 6 to 5 -->
+				<control type="group">
+					<visible>Container(53).OnNext</visible>					
+					<animation effect="slide" start="0" end="-370" tween="sine" easing="out" time="375" reversible="false">Hidden</animation>
+					<posx>1480</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem1Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem1Var]</texture>					
+					</control>
+
+				</control>
+
+				<!-- Panel 5 to 4 -->
+				<control type="group">
+					<visible>Container(53).OnNext</visible>
+					<animation effect="zoom" start="1110,30,266,400" end="710,0,320,480" time="375" tween="sine" easing="out" reversible="false">Hidden</animation>
+					<posx>1110</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">					
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem0Var]</texture>					
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem0Var]</texture>						
+					</control>
+
+				</control>
+
+				<!-- Panel 4 to 3 -->
+				<control type="group">
+					<visible>Container(53).OnNext</visible>
+					<animation effect="zoom" start="710,0,320,480" end="370,30,266,400" tween="sine" easing="out" time="375" reversible="false">Hidden</animation>
+					<posx>710</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>480</height>
+					<control type="image">						
+						<width>320</width>
+						<height>480</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-1Var]</texture>	
+					</control>
+					<control type="image">						
+						<posy>480</posy>
+						<width>320</width>
+						<height>480</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-1Var]</texture>
+					</control>					
+				</control>
+
+				<!-- Panel 3 to 2 -->
+				<control type="group">
+					<visible>Container(53).OnNext</visible>					
+					<animation effect="slide" start="0" end="-370" tween="sine" easing="out" time="375" reversible="false">Hidden</animation>
+					<posx>370</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-2Var]</texture>							
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-2Var]</texture>					
+					</control>
+
+				</control>
+
+				<!-- Panel 2 to 1 -->
+				<control type="group">
+					<visible>Container(53).OnNext</visible>					
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="100" end="0" time="375" tween="sine" easing="out" />
+						<effect type="slide" start="0" end="-266" time="375" tween="sine" easing="out" />
+					</animation>
+					<posx>0</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-3Var]</texture>						
+					</control>
+					<control type="image">						
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-3Var]</texture>						
+					</control>					
+				</control>
+
+			</control>	
+
+			<!--Static Panels-->
+			<control type="group" id="5900">				
+				<visible>!Control.IsVisible(5901) + !Control.IsVisible(5902)</visible>	
+
+				<!-- Poster 5 -->
+				<control type="group">						
+					<posx>1480</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>					
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem2Var]</texture>			
+					</control>
+					<control type="image">					
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem2Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Poster 4 -->
+				<control type="group">						
+					<posx>1110</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>					
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem1Var]</texture>			
+					</control>
+					<control type="image">					
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem1Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Poster 3 -->
+				<control type="group">						
+					<posx>710</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>480</height>					
+					<control type="image">						
+						<width>320</width>
+						<height>480</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem0Var]</texture>			
+					</control>
+					<control type="image">					
+						<posy>480</posy>
+						<width>320</width>
+						<height>480</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem0Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Poster 2 -->
+				<control type="group">						
+					<posx>370</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>					
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-1Var]</texture>			
+					</control>
+					<control type="image">					
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-1Var]</texture>	
+					</control>
+				</control>
+
+				<!-- Poster 1 -->
+				<control type="group">						
+					<posx>0</posx>
+					<posy>30</posy>
+					<width>266</width>
+					<height>400</height>					
+					<control type="image">						
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+						<texture background="true" diffuse="poster_matte.png">$VAR[ShowcaseItem-2Var]</texture>			
+					</control>
+					<control type="image">					
+						<posy>400</posy>
+						<width>266</width>
+						<height>400</height>
+						<aspectratio scalediffuse="false" aligny="center">scale</aspectratio>		
+						<texture background="true" flipy="true" diffuse="poster_matte_reflect.png">$VAR[ShowcaseItem-2Var]</texture>	
+					</control>
+				</control>
+
+			</control>
+		</control>
+
+		<!--Wraplist 53-->
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>
+			<control type="wraplist" id="53">
+				<posx>-313</posx>
+				<posy>190</posy>
+				<width>2590</width>
+				<height>773</height>
+				<onleft>53</onleft>
+				<onright>53</onright>				
+				<onup>9000</onup>
+				<ondown>60</ondown>	
+				<pagecontrol>60</pagecontrol>
+				<visible>Container.Content(movies) | Container.Content(tvshows)</visible>				
+				<viewtype label="Poster Wrap">wrap</viewtype>
+				<preloaditems>2</preloaditems>
+				<focusposition>3</focusposition>			
+				<orientation>horizontal</orientation>				
+				<scrolltime tween="quadratic">375</scrolltime>
+
+				<itemlayout width="370" height="450">				
+				</itemlayout>
+				<focusedlayout width="370" height="450">					
+					<control type="button">
+						<include>HiddenButton</include>
+						<onfocus>Skin.SetBool(ViewChange)</onfocus>					
+					</control>
+				</focusedlayout>
+
+			</control>
+		</control>
+
+		<!--Info Plots Default-->
+		<control type="group">		
+			<visible>!Skin.HasSetting(BigInfo)</visible>
+			<control type="group">		<!--RSS Label-->
+				<visible>Control.IsVisible(53)</visible>				
+				<include>animation_fade</include>					
+				<posx>0</posx>
+				<posy>722</posy>		
+				<control type="label">	<!--RSS2-->	
+					<visible>!SubString(ListItem.Label,..)</visible>
+					<posx>700</posx>
+					<posy>0</posy> 
+					<width>250</width>					
+					<font>Light32</font>
+					<textcolor>mainblue</textcolor>	
+					<label>$VAR[value_rss_label_2]</label>
+				</control>	
+				<control type="label">	<!--RSS3-->	
+					<posx>1820</posx>
+					<posy>0</posy> 
+					<width>250</width>
+					<align>right</align>				
+					<font>Light32</font>
+					<textcolor>mainblue</textcolor>	
+					<label>$VAR[value_rss_label_3]</label>
+				</control>	
+			</control>
+			<control type="group">		<!--List Label-->
+				<visible>Control.IsVisible(53)</visible>	
+				<visible>!SubString(ListItem.Label,..)</visible>
+				<include>animation_fade</include>							
+				<posx>0</posx>
+				<posy>795</posy>
+				<control type="label">	<!--Label 1 LONG: Movies, TV-Shows, Episodes-->		
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+					<visible>!Skin.HasSetting(Flags)</visible>
+					<posx>700</posx>
+					<posy>0</posy>						
+					<width>1150</width> 		
+					<font>Reg40Bold</font>			
+					<textcolor>aawhite</textcolor>			
+					<label>$VAR[value_list_label_1]</label>				
+				</control>
+				<control type="label">	<!--Label 1 SHORT: Movies, TV-Shows, Episodes-->		
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>	
+					<visible>Skin.HasSetting(Flags)</visible>
+					<posx>700</posx>
+					<posy>0</posy>						
+					<width>700</width> 		
+					<font>Reg40Bold</font>			
+					<textcolor>aawhite</textcolor>			
+					<label>$VAR[value_list_label_1]</label>				
+				</control>
+				<control type="label">	<!--Label 1: Seasons-->		
+					<visible>Container.Content(seasons)</visible>	
+					<posx>1200</posx>
+					<posy>0</posy>						
+					<width>650</width>		
+					<font>Reg40Bold</font>			
+					<textcolor>aawhite</textcolor>			
+					<label>$VAR[value_list_label_1]</label>				
+				</control>
+			</control>
+			<control type="group">		<!--Additional Info-->
+				<visible>Control.IsVisible(53)</visible>
+				<visible>!SubString(ListItem.Label,..)</visible>
+				<include>animation_fade</include>						
+				<posx>700</posx>
+				<posy>865</posy>
+				<control type="group">	<!--Ground 1-->
+					<visible>!IsEmpty(Control.GetLabel(5201))</visible>					
+					<posy>0</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground1_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5301))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>	
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>
+						<label>$VAR[value_ground1_value]</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5301))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>
+						<label>...</label>			
+					</control>
+				</control>
+				<control type="group">	<!--Ground 2-->
+					<visible>!IsEmpty(Control.GetLabel(5202))</visible>						
+					<posy>37</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>	
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground2_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5302))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>
+						<label>$VAR[value_ground2_value] min</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5302))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>...</label>			
+					</control>
+				</control>
+				<control type="group">	<!--Ground 3-->
+					<visible>!IsEmpty(Control.GetLabel(5203))</visible>					
+					<posy>74</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>	
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground3_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5303))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>$VAR[value_ground3_value]</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5303))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>...</label>			
+					</control>
+				</control>
+				<control type="group">	<!--Ground 4-->
+					<visible>!IsEmpty(Control.GetLabel(5204))</visible>					
+					<posy>111</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>	
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground4_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5304))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>	
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>$VAR[value_ground4_value]</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5304))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>	
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>...</label>			
+					</control>
+				</control>	
+			</control>
+			<control type="textbox">	<!--Info Plot-->
+				<visible>Control.IsVisible(53)</visible>	
+				<visible>!SubString(ListItem.Label,..)</visible>
+				<include>animation_fade</include>				
+				<posx>1200</posx>
+				<posy>875</posy>	
+				<width>620</width>
+				<height>150</height>
+				<font>Light30</font>				
+				<textcolor>aawhite</textcolor>	
+				<shadowcolor></shadowcolor> 
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>				
+			</control>	
+		</control>
+
+		<!--Info Plots Big-->
+		<control type="group">	
+			<visible>Skin.HasSetting(BigInfo)</visible>
+			<control type="group">		<!--RSS Label-->
+				<visible>Control.IsVisible(53)</visible>				
+				<include>animation_hoverslide</include>					
+				<posx>0</posx>
+				<posy>722</posy>			
+				<control type="label">	<!--RSS2-->	
+					<visible>!SubString(ListItem.Label,..)</visible>
+					<posx>280</posx>
+					<posy>0</posy> 
+					<width>250</width>					
+					<font>Light32</font>
+					<textcolor>mainblue</textcolor>	
+					<label>$VAR[value_rss_label_2]</label>
+				</control>	
+				<control type="label">	<!--RSS3-->	
+					<posx>1820</posx>
+					<posy>0</posy> 
+					<width>250</width>
+					<align>right</align>				
+					<font>Light32</font>
+					<textcolor>mainblue</textcolor>	
+					<label>$VAR[value_rss_label_3]</label>
+				</control>	
+			</control>
+			<control type="group">		<!--List Label-->
+				<visible>Control.IsVisible(53)</visible>	
+				<visible>!SubString(ListItem.Label,..)</visible>
+				<include>animation_fade</include>					
+				<posx>0</posx>
+				<posy>795</posy>
+				<control type="label">	<!--Label 1 LONG: Movies, TV-Shows, Episodes-->		
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
+					<visible>!Skin.HasSetting(Flags)</visible>
+					<posx>280</posx>
+					<posy>0</posy>						
+					<width>1150</width> 		
+					<font>Reg40Bold</font>			
+					<textcolor>aawhite</textcolor>			
+					<label>$VAR[value_list_label_1]</label>				
+				</control>
+				<control type="label">	<!--Label 1 SHORT: Movies, TV-Shows, Episodes-->		
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>	
+					<visible>Skin.HasSetting(Flags)</visible>
+					<posx>280</posx>
+					<posy>0</posy>						
+					<width>700</width> 		
+					<font>Reg40Bold</font>			
+					<textcolor>aawhite</textcolor>			
+					<label>$VAR[value_list_label_1]</label>				
+				</control>
+				<control type="label">	<!--Label 1: Seasons-->		
+					<visible>Container.Content(seasons)</visible>	
+					<posx>1200</posx>
+					<posy>0</posy>						
+					<width>650</width>		
+					<font>Reg40Bold</font>			
+					<textcolor>aawhite</textcolor>			
+					<label>$VAR[value_list_label_1]</label>				
+				</control>
+			</control>
+			<control type="group">		<!--Additional Info-->
+				<visible>Control.IsVisible(53)</visible>
+				<visible>!SubString(ListItem.Label,..)</visible>
+				<include>animation_fade</include>				
+				<posx>280</posx>
+				<posy>865</posy>
+				<control type="group">	<!--Ground 1-->
+					<visible>!IsEmpty(Control.GetLabel(5201))</visible>					
+					<posy>0</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground1_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5301))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>	
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>
+						<label>$VAR[value_ground1_value]</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5301))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>
+						<label>...</label>			
+					</control>
+				</control>
+				<control type="group">	<!--Ground 2-->
+					<visible>!IsEmpty(Control.GetLabel(5202))</visible>						
+					<posy>37</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>	
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground2_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5302))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>
+						<label>$VAR[value_ground2_value] min</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5302))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>...</label>			
+					</control>
+				</control>
+				<control type="group">	<!--Ground 3-->
+					<visible>!IsEmpty(Control.GetLabel(5203))</visible>					
+					<posy>74</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>	
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground3_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5303))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>$VAR[value_ground3_value]</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5303))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>...</label>			
+					</control>
+				</control>
+				<control type="group">	<!--Ground 4-->
+					<visible>!IsEmpty(Control.GetLabel(5204))</visible>					
+					<posy>111</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>180</width>	
+						<font>Light30</font>
+						<textcolor>mainblue</textcolor>			
+						<label>$VAR[value_ground4_label]</label>			
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(Control.GetLabel(5304))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>	
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>$VAR[value_ground4_value]</label>			
+					</control>
+					<control type="label">
+						<visible>IsEmpty(Control.GetLabel(5304))</visible>
+						<posx>170</posx>
+						<posy>0</posy>
+						<width>250</width>	
+						<font>Light30</font>
+						<textcolor>aawhite</textcolor>					
+						<label>...</label>			
+					</control>
+				</control>	
+			</control>
+			<control type="textbox">	<!--Info Plot-->
+				<visible>Control.IsVisible(53)</visible>	
+				<visible>!SubString(ListItem.Label,..)</visible>
+				<include>animation_fade</include>					
+				<posx>800</posx>
+				<posy>875</posy>	
+				<width>1020</width>
+				<height>150</height>
+				<font>Light30</font>				
+				<textcolor>aawhite</textcolor>	
+				<shadowcolor></shadowcolor> 
+				<autoscroll>false</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>				
+			</control>	
+		</control>
+
+		<!--Flags Video-->		
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>	
+			<visible>Skin.HasSetting(Flags)</visible>
+			<visible>Container.Content(movies)</visible>
+			<visible>!SubString(ListItem.Label,..)</visible>
+			<include>animation_fade</include>				
+			<posx>1470</posx>
+			<posy>806</posy>			
+
+			<control type="image">	<!--Video Resolution-->	
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>212</width>
+				<height>45</height>		
+				<colordiffuse>77white</colordiffuse>
+				<texture fallback="flags/resolution/default.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>					
+			</control>	
+			<control type="image">	<!--VideoCode-->
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>212</width>
+				<height>45</height>		
+				<colordiffuse>77white</colordiffuse>
+				<texture fallback="flags/videocodec/default.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>				
+			</control>				
+			<control type="image">	<!--Aspectration-->
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>212</width>
+				<height>45</height>		
+				<colordiffuse>77white</colordiffuse>
+				<texture fallback="flags/aspectration/default.png">$INFO[ListItem.VideoAspect,flags/aspectration/,.png]</texture>					
+			</control>
+		</control>			
+
+		<!--Flags Audio-->		
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>	
+			<visible>Skin.HasSetting(Flags)</visible>
+			<visible>Container.Content(movies)</visible>
+			<visible>!SubString(ListItem.Label,..)</visible>
+			<include>animation_fade</include>			
+			<posx>1700</posx>
+			<posy>806</posy>			
+
+			<control type="image">	<!--Audio Codec-->	
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>124</width>
+				<height>45</height>		
+				<colordiffuse>77white</colordiffuse>
+				<texture fallback="flags/audiocodec/default.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>					
+			</control>	
+			<control type="image">	<!--Audio Channels-->	
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>124</width>
+				<height>45</height>		
+				<colordiffuse>77white</colordiffuse>
+				<texture fallback="flags/audiochannels/default.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,.png]</texture>					
+			</control>	
+		</control>
+
+		<!--Scrollbar-->	
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>					
+			<include>animation_fade</include>
+			<visible>IntegerGreaterThan(Container(53).NumItems,30)</visible>	
+			<visible>Skin.HasSetting(Scrollbar)</visible>
+
+			<control type="scrollbar" id="60">	<!--Scrollbar ID60-->	
+				<posx>100</posx> 
+				<posy>690</posy>
+				<width>1720</width>
+				<height>4</height>	
+				<onup>53</onup>			
+				<ondown>noop</ondown>
+				<onleft>noop</onleft>
+				<onright>noop</onright>					
+				<orientation>horizontal</orientation>	
+				<texturesliderbackground colordiffuse="88ffffff">common/scrollbar_back_horizontal.png</texturesliderbackground>
+				<textureslidernib colordiffuse="88ffffff">common/scrollbar_horizontal.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="FFffffff">common/scrollbar_horizontal.png</textureslidernibfocus>				
+			</control>			
+			<control type="image">				<!--Scrolling Letter Background-->
+				<visible>Container(53).Scrolling</visible>	
+				<animation effect="fade" start="0" end="100" time="375" delay="100">Visible</animation>				
+				<animation effect="fade" start="100" end="0" time="375" delay="100">Hidden</animation>	
+				<posx>910</posx>
+				<posy>370</posy>
+				<width>100</width>
+				<height>100</height>			
+				<texture>common/scrollbar_letter_back.png</texture>
+			</control>
+			<control type="label">				<!--Scrolling Letter-->
+				<visible>Container(53).Scrolling</visible>	
+				<animation effect="fade" start="0" end="100" time="375" delay="100">Visible</animation>				
+				<animation effect="fade" start="100" end="0" time="375" delay="100">Hidden</animation>	
+				<posx>910</posx>
+				<posy>370</posy>
+				<width>100</width>
+				<height>100</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Reg60</font>				
+				<textcolor>mainblue</textcolor>									
+				<label>$INFO[ListItem.SortLetter]</label>
+			</control>				
+		</control>	
+
+	</include>
+</includes>
